@@ -10,6 +10,7 @@ setup(
         'a2scomp/apktool.py',
         'a2scomp/zipalign.py',
         'a2scomp/apksign.py',
+        'a2scomp/d2j.py',
     ],
     install_requires=[
         'Click',

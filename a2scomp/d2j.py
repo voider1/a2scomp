@@ -1,5 +1,24 @@
 import subprocess
+import sys
+
+import click
+
+from a2scomp.a2scomp import cli
 
 
-def dex_2_jar(apk):
-    subprocess.run(['d2j-dex2jar', 'apk'])
+@cli.command()
+@click.pass_obj
+def jarify(config):
+    if config.apk:
+        click.echo('Going to jarify the APK...')
+
+        try:
+            subprocess.run(['d2j-dex2jar', config.apk],
+                           stdout=subprocess.DEVNULL).check_returncode()
+        except subprocess.CalledProcessError:
+            print('[-] The APK can\'t be jarified')
+            sys.exit()
+
+        click.echo('[+] Succesfully jarified the APK')
+    else:
+        click.echo('[-] No APK provided')

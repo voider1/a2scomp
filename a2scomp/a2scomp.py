@@ -16,6 +16,7 @@ def cli(ctx, apk, smali, keystore):
     ctx.obj = Config(apk, smali, keystore)
 
 
-import apktool # NOQA
-import zipalign # NOQA
-import apksign # NOQA
+import apktool  # NOQA
+import zipalign  # NOQA
+import apksign  # NOQA
+import d2j  # NOQA
