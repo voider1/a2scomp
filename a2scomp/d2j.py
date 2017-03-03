@@ -14,7 +14,8 @@ def jarify(config):
 
         try:
             subprocess.run(['d2j-dex2jar', config.apk],
-                           stdout=subprocess.DEVNULL).check_returncode()
+                           stdout=subprocess.DEVNULL,
+                           stderr=subprocess.DEVNULL).check_returncode()
         except subprocess.CalledProcessError:
             print('[-] The APK can\'t be jarified')
             sys.exit()

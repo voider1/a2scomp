@@ -18,7 +18,8 @@ def sign(config):
             apk_release = '.'.join(apk_release)
             subprocess.run(['apksigner', 'sign', '--ks', config.keystore,
                             '--out', apk_release,
-                            config.apk]).check_returncode()
+                            config.apk],
+                           stderr=subprocess.DEVNULL).check_returncode()
         except subprocess.CalledProcessError:
             print('[-] Can\'t sign the APK')
             sys.exit()

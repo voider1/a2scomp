@@ -18,7 +18,8 @@ def decode(config):
 
         try:
             subprocess.run(['apktool', 'd', '-f', '-r', '-c', config.apk],
-                           stdout=subprocess.DEVNULL).check_returncode()
+                           stdout=subprocess.DEVNULL,
+                           stderr=subprocess.DEVNULL).check_returncode()
         except subprocess.CalledProcessError:
             print('[-] The APK can\'t be decoded')
             sys.exit()
@@ -44,7 +45,8 @@ def build(ctx, zipalign, sign):
 
         try:
             subprocess.run(['apktool', 'b', config.smali],
-                           stdout=subprocess.DEVNULL).check_returncode()
+                           stdout=subprocess.DEVNULL,
+                           stderr=subprocess.DEVNULL).check_returncode()
         except subprocess.CalledProcessError:
             print('[-] The APK can\'t be rebuild after decoding')
             sys.exit()
