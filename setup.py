@@ -11,6 +11,7 @@ setup(
         'a2scomp/zipalign.py',
         'a2scomp/apksign.py',
         'a2scomp/d2j.py',
+        'a2scomp/jadx.py',
     ],
     install_requires=[
         'Click',
