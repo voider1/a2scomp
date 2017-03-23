@@ -11,7 +11,7 @@ Make sure the following tools are in your path:
     * View this link for installation: https://github.com/skylot/jadx
 
 This tool is **python 3 only**.
-    
+
 ## Install
 Clone the repo:
 
